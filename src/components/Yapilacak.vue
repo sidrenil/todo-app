@@ -46,7 +46,6 @@ export default {
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
-        // Ebeveyn bileşene silme bildirimi gönder
         this.$emit("sil", this.yapilacak.id);
       } catch (err) {
         console.error(err);
