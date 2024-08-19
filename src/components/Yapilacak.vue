@@ -6,7 +6,6 @@
         <router-link
           :to="{ name: 'YapilacakGuncelle', params: { id: yapilacak.id } }"
         >
-          asdfasdf
           <span class="material-icons">edit</span>
         </router-link>
         <span class="material-icons" @click="yapilacakSil">delete</span>

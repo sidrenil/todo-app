@@ -2,10 +2,11 @@
   <form @submit.prevent="yapilacakEkle">
     <label>Başlik:</label>
     <input v-model="baslik" type="text" required />
-
+    <br />
+    <br />
     <label>İcerik:</label>
     <input v-model="icerik" type="text" required />
-
+    <br />
     <button>Ekle</button>
   </form>
 </template>
@@ -18,7 +19,6 @@ const icerik = ref("");
 const router = useRouter();
 
 function yapilacakEkle() {
-  // console.log(this.baslik, this.icerik);
   let yapilacak = {
     id: Math.floor(Math.random() * 100000),
     baslik: baslik.value,
@@ -34,20 +34,54 @@ function yapilacakEkle() {
 }
 </script>
 
-<style>
-form {
-  @apply bg-white p-20 rounded-xl;
+<style scoped>
+.form-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
 }
-label {
-  @apply block text-slate-200 uppercase text-sm font-bold;
+
+.form-box {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 15px;
 }
-input {
-  @apply p-10 border-0 border-2 border-solid border-slate-950 w-full box-border;
+
+.form-label {
+  display: block;
+  color: #4a5568;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
-textarea {
-  @apply border-2 border-solid border-zinc-950 p-10 w-full box-border h-full;
+
+.form-input {
+  padding: 10px;
+  border: 2px solid #718096;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 14px;
 }
-form button {
-  @apply block m-20 mx-auto mt-10 bg-green-600 text-white p-10 border-0 rounded-md text-base;
+
+.form-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #48bb78;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+  background-color: #38a169;
 }
 </style>
